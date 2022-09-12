@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+
+    --piano-width: 500px;
+
+}
+
+body {    
+    background-image: linear-gradient(120deg,#212121, #424242);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.piano-painel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: var(--piano-width);
+    height: 100px;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.piano-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(100, 35%, 42%);
+    width: 200px;
+    height: 50px;
+    color: hsl(101, 48%, 11%);
+
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+
+    user-select: none;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px 2px black;
+}   
+
+.piano-keyboard {
+
+    /* display: flex; */
+    position: relative;
+
+    /* flex-direction: column; */
+    width: var(--piano-width);
+    height: 250px;
+
+    background-color: black;
+    padding: 10px;
+
+    border-radius: 0 0 10px 10px;
+
+    
+}
+.key {
+
+    display: flex;
+    border-radius: 10px;
+
+    transition: transform 100ms ease-out;
+
+}
+
+.white-keys {
+    
+    display: flex;
+    width: calc(var(--piano-width) - 20px);
+    height: 100%;
+
+}
+
+.black-keys {
+
+    display: flex;
+    position: absolute;
+
+    width: 100%;
+    height: 58%;
+
+    top: 5px;
+    left: 27px;
+
+    pointer-events: none;
+}
+
+.white {
+    
+    background-color: white;
+    margin: 1px;
+    width: 100px;
+    
+}
+
+.black {
+    background-color: black;
+    width: 50px;
+    margin-left: 25px;
+    border-radius: 10px;
+    z-index: 1000;
+
+    pointer-events: all;
+    
+}
+
+.blank {
+    background-color: transparent;
+}
+
+.key:active {
+    transform: scale(0.95);
+}
+
+.white:active {
+    filter: brightness(80%);  
+}
+
+.black:active {
+    filter: invert(10%);
+}
